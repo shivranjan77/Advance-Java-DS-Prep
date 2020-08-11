@@ -9,7 +9,27 @@ class Node{
 	}
 }
 public class myLL {
-
+	static void print(Node head) {
+		while(head!=null) {
+			System.out.print(head.data+" ");
+			head=head.next;
+		}
+	}
+   static Node insertAtstart(Node head,int data) {
+	   Node temp=new Node(data);
+	   temp.next=head;
+	   head=temp;
+	   return head;
+   }
+   static Node insertAtend(Node head,int data) {
+	   Node temp=new Node(data);
+	   Node last=head;
+	   while(last!=null) {
+		   last=last.next;
+	   }
+	   last=temp;
+	   return last;
+   }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
           Node head=new Node(5);
@@ -24,7 +44,7 @@ public class myLL {
           System.out.println();
           temp=head;
           // Searching in SIngly link list
-          while(temp!=null) {
+       /*   while(temp!=null) {
         	    
         		
         		temp=temp.next;
@@ -36,7 +56,9 @@ public class myLL {
             			break;
         			
         		}
-        	}
+        	}*/
+        print(insertAtstart(head,4));
+        print(insertAtend(head,9));
           
 	}
 	
